@@ -2,27 +2,27 @@
   <div class="item">
     <div class="pos-rlt">
       <div class="bottom">
-        <span class="badge bg-info m-l-sm m-b-sm">{{(media.time)| amFromUtc |amDateFormat: 'mm:ss'}}</span>
+        <span class="badge bg-info m-l-sm m-b-sm">{{(master.time)| amFromUtc |amDateFormat: 'mm:ss'}}</span>
       </div>
       <div class="item-overlay opacity r r-2x bg-black">
         <div class="center text-center m-t-n">
-          <a [routerLink]="['/video',media.id]">
+          <a [routerLink]="['/video',master.id]">
             <i class="icon-control-play i-2x"></i>
           </a>
         </div>
       </div>
       <a>
-        <img [src]="media.image" style="height: 200px" class="r r-2x img-full">
+        <img [src]="master.image" style="height: 200px" class="r r-2x img-full">
       </a>
     </div>
     <div class="padder-v">
-      <a class="text-ellipsis" [routerLink]="['/video',media.id]"> {{media.title}}</a>
-      <a *ngIf="media.user" [routerLink]="['/profile',media.userId]" class="text-ellipsis text-xs text-muted">
-        {{media.user.name}}
+      <a class="text-ellipsis" [routerLink]="['/video',master.id]"> {{master.title}}</a>
+      <a *ngIf="master.user" [routerLink]="['/profile',master.userId]" class="text-ellipsis text-xs text-muted">
+        {{master.user.name}}
       </a>
-      <span *ngIf="media.mediaInfo" class="text-ellipsis">
-      {{media.mediaInfo.viewsCount}} Views .
-      {{media.publishDate | amTimeAgo}}
+      <span *ngIf="master.mediaInfo" class="text-ellipsis">
+      {{master.mediaInfo.viewsCount}} Views .
+      {{master.createdDate | amTimeAgo}}
       </span>
     </div>
   </div>
