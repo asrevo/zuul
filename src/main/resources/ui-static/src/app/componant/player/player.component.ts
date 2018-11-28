@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {AfterViewInit, Component, Input, OnInit} from '@angular/core';
 
 declare var jwplayer: any;
 
@@ -7,7 +7,7 @@ declare var jwplayer: any;
   templateUrl: './player.component.html',
   styleUrls: ['./player.component.css']
 })
-export class PlayerComponent implements OnInit {
+export class PlayerComponent implements OnInit,AfterViewInit {
   @Input()
   id: string;
 
@@ -15,6 +15,9 @@ export class PlayerComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  ngAfterViewInit(): void {
     jwplayer('player').setup(
       {
         "image": 'https://df30el3rzhrdb.cloudfront.net/' + this.id + '.png',
