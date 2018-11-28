@@ -1,10 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {VgCoreModule} from 'videogular2/core';
-import {VgStreamingModule} from 'videogular2/streaming';
-import {VgControlsModule} from 'videogular2/controls';
-import {VgOverlayPlayModule} from 'videogular2/overlay-play';
-import {VgBufferingModule} from 'videogular2/buffering';
 
 import {HeaderComponent} from './componant/header/header.component';
 import {NavComponent} from './componant/nav/nav.component';
@@ -77,11 +72,6 @@ import {GroupComponent} from './views/group/group.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    VgCoreModule,
-    VgStreamingModule,
-    VgControlsModule,
-    VgOverlayPlayModule,
-    VgBufferingModule,
     MomentModule,
     FormsModule,
     RouterModule.forRoot(routes)

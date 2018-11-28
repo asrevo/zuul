@@ -28,7 +28,7 @@
                       by
                       <a [routerLink]="['/profile',m.userId]" class="m-r-sm">{{m.user.name}}</a>
                       <i class="fa fa-clock-o icon-muted"></i>
-                      {{m.publishDate | amFromUtc | amDateFormat: 'YYYY-MM-DD'}}
+                      {{m.createdDate | amFromUtc | amDateFormat: 'YYYY-MM-DD'}}
                       <a class="m-l-sm">
                         <i class="fa fa-comment-o text-danger"></i> {{m.mediaInfo.commentsCount}}
                       </a>
