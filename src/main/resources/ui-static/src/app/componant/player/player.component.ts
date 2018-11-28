@@ -24,7 +24,9 @@ export class PlayerComponent implements OnInit {
                 "file": '/tube/api/' + this.id + '.m3u8/',
                 "label": "0",
                 "type": "hls",
-                "preload": "metadata"
+                "preload": "metadata",
+                "autostart": "true",
+                "mute": "false"
               }
             ]
           }
