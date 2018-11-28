@@ -1,0 +1,15 @@
+<li class="list-group-item clearfix">
+  <a [routerLink]="['/video',media.id]" class="jp-play-me pull-right m-t-sm m-l text-md">
+    <i class="icon-control-play text"></i>
+    <i class="icon-control-pause text-active"></i>
+  </a>
+  <a [routerLink]="['/video',media.id]" class="pull-left thumb-sm m-r">
+    <img [src]="media.image">
+  </a>
+  <a class="clear" [routerLink]="['/video',media.id]">
+    <span class="block text-ellipsis">{{media.title}}</span>
+  </a>
+  <a *ngIf="media.user" class="clear" [routerLink]="['/profile',media.user.id]">
+    <small class="text-muted">{{media.user.name}}</small>
+  </a>
+</li>
