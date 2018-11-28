@@ -150,7 +150,7 @@ export class TubeService {
   }
 
   save(file: File): Observable<any> {
-    return this._http.post(this.url + "save", file);
+    return this._http.post(this.url + "file/save", file);
   }
 
 
