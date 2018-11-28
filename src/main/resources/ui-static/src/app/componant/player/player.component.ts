@@ -18,7 +18,7 @@ export class PlayerComponent implements OnInit {
     jwplayer('player').setup({
         "playlist": [
           {
-            "image": 'https://d3bqk77z8dwtkd.cloudfront.net/' + this.id + '.png',
+            "image": 'https://df30el3rzhrdb.cloudfront.net/' + this.id + '.png',
             "sources": [
               {
                 "default": false,
