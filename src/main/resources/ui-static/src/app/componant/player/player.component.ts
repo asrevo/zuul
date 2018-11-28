@@ -15,25 +15,10 @@ export class PlayerComponent implements OnInit {
   }
 
   ngOnInit() {
-    jwplayer('player').setup({
-        "playlist": [
-          {
-            "image": 'https://df30el3rzhrdb.cloudfront.net/' + this.id + '.png',
-            "sources": [
-              {
-                "default": false,
-                "file": '/tube/api/' + this.id + '.m3u8/',
-                "label": "0",
-                "type": "hls",
-                "preload": "metadata",
-                "autostart": "true",
-                "mute": "false"
-              }
-            ]
-          }
-        ],
-        "primary": "html5",
-        "hlshtml": true
+    jwplayer('player').setup(
+      {
+        "image": 'https://df30el3rzhrdb.cloudfront.net/' + this.id + '.png',
+        "file": '/tube/api/' + this.id + '.m3u8/',
       }
     );
   }
