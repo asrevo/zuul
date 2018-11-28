@@ -11,7 +11,7 @@
             Subscriptions
           </h2>
           <ul class="list-group no-radius m-b-none m-t-n-xxs list-group-lg no-border">
-            <as-video-row-search *ngFor="let m of media" [media]="m"></as-video-row-search>
+            <as-video-row-search *ngFor="let m of master" [master]="m"></as-video-row-search>
           </ul>
         </div>
         <button (click)="load()" [disabled]="!canLoad" class="btn btn-sm white rounded center-block">Show More</button>

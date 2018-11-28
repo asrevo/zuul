@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {Location} from '@angular/common';
-import {Media} from '../../domain/media';
 import {Search} from '../../domain/search';
 import {ActivatedRoute, Params} from '@angular/router';
 import {IndexingService} from '../../services/indexing.service';
 import {map} from 'rxjs/internal/operators';
+import {Master} from "../../domain/master";
 
 @Component({
   selector: 'as-search',
@@ -12,7 +12,7 @@ import {map} from 'rxjs/internal/operators';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-  public media: Media[] = [];
+  public master: Master[] = [];
   public search: Search = new Search();
 
   constructor(private _activatedRoute: ActivatedRoute, private _indexingService: IndexingService, private _location: Location) {
@@ -32,15 +32,15 @@ export class SearchComponent implements OnInit {
     }))
       .subscribe(it => {
         this.search = it;
-        this.media = [];
+        this.master = [];
         this.doSearch();
       });
   }
 
   doSearch() {
     this._indexingService.search(this.search).subscribe(it => {
-      it.media.forEach(itm => {
-        this.media.push(itm);
+      it.master.forEach(itm => {
+        this.master.push(itm);
       });
       this._location.replaceState('/search/' + this.search.page + '/' + (this.search.search_key.split(' ').join('-')));
     });

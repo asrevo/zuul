@@ -1,9 +1,9 @@
-import {Media} from "./media";
+import {Master} from "./master";
 
 export class Stater {
   id: string;
   queue: string;
   state: string;
-  media: Media;
+  master: Master;
   createdDate: string;
 }

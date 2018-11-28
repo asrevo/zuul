@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {TubeService} from '../../services/tube.service';
-import {Media} from '../../domain/media';
 import {map} from 'rxjs/internal/operators';
+import {Master} from "../../domain/master";
 
 @Component({
   selector: 'as-trending',
@@ -9,7 +9,7 @@ import {map} from 'rxjs/internal/operators';
   styleUrls: ['./trending.component.css']
 })
 export class TrendingComponent implements OnInit {
-  public media: Media[] = [];
+  public master: Master[] = [];
 
   constructor(private _tubeService: TubeService) {
   }
@@ -17,7 +17,7 @@ export class TrendingComponent implements OnInit {
   ngOnInit() {
     this._tubeService.trending()
       .pipe(map(it => it.sort((it1, it2) => it2.mediaInfo.viewsCount - it1.mediaInfo.viewsCount)))
-      .subscribe(it => this.media = it);
+      .subscribe(it => this.master = it);
   }
 
 }

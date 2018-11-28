@@ -3,12 +3,12 @@ import {UserService} from '../../services/user.service';
 import {TubeService} from '../../services/tube.service';
 import {ActivatedRoute, Params} from '@angular/router';
 import {User} from '../../domain/user';
-import {Media} from '../../domain/media';
 import {AuthService} from '../../services/auth.service';
 import {FeedbackService} from '../../services/feedback.service';
 import {AuthUser} from '../../domain/auth-user';
 import {filter, tap} from 'rxjs/operators';
 import {map, mergeMap} from 'rxjs/internal/operators';
+import {Master} from "../../domain/master";
 
 @Component({
   selector: 'as-profile',
@@ -20,7 +20,7 @@ export class ProfileComponent implements OnInit {
   public user: User;
   public authUser: AuthUser;
   public isFollow = false;
-  public media: Media[] = [];
+  public master: Master[] = [];
   public followers: User[] = [];
   public following: User[] = [];
 
@@ -55,7 +55,7 @@ export class ProfileComponent implements OnInit {
         this.user = it;
       });
     this._activatedRoute.params.pipe(map((it: Params) => it['id']), mergeMap(it => this._tubeService.findByUserId(it))).subscribe(it => {
-      this.media = it;
+      this.master = it;
     });
 
     this._activatedRoute.params.pipe(map((it: Params) => it['id']), mergeMap(it => this._feedbackService.followers(it))).subscribe(it => {

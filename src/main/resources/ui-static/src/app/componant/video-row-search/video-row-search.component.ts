@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Media} from '../../domain/media';
+import {Master} from "../../domain/master";
 
 @Component({
   selector: 'as-video-row-search',
@@ -8,9 +8,10 @@ import {Media} from '../../domain/media';
 })
 export class VideoRowSearchComponent implements OnInit {
   @Input()
-  public media: Media;
+  public master: Master;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

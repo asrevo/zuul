@@ -1,5 +1,6 @@
 import {Base} from "./base";
 import {IndexImpl} from "./index-impl";
+import {MediaInformation} from "./media-information";
 
 export class Master extends Base {
   image: string;
@@ -9,4 +10,5 @@ export class Master extends Base {
   impls: IndexImpl[];
   time: number;
   resolution: string;
+  mediaInfo: MediaInformation;
 }

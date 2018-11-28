@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../../services/auth.service';
 import {TubeService} from '../../services/tube.service';
-import {Media} from '../../domain/media';
 import {take} from 'rxjs/operators';
 import {AuthUser} from '../../domain/auth-user';
 import {filter, mergeMap} from 'rxjs/internal/operators';
+import {Master} from "../../domain/master";
 
 @Component({
   selector: 'as-subscriptions',
@@ -12,7 +12,7 @@ import {filter, mergeMap} from 'rxjs/internal/operators';
   styleUrls: ['./subscriptions.component.css']
 })
 export class SubscriptionsComponent implements OnInit {
-  public media: Media[] = [];
+  public master: Master[] = [];
   private lastid = '0';
   public canLoad = true;
 
@@ -28,15 +28,15 @@ export class SubscriptionsComponent implements OnInit {
       this.canLoad = false;
       this._authService.onChange().asObservable().pipe(filter((it: AuthUser) => it.isAuth === 'true'))
         .pipe(mergeMap(it => this._tubeService.subscriptions(5, this.lastid)), take(1))
-        .subscribe((it: Media[]) => {
+        .subscribe((it: Master[]) => {
             it.forEach(i => {
-              this.media.push(i);
+              this.master.push(i);
             });
           }
           , error => {
           }, () => {
-            if (this.media.length > 0) {
-              this.lastid = this.media[this.media.length - 1].id;
+            if (this.master.length > 0) {
+              this.lastid = this.master[this.master.length - 1].id;
             }
             this.canLoad = true;
           });

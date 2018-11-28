@@ -1,7 +1,7 @@
 import {Search} from './search';
-import {Media} from './media';
+import {Master} from "./master";
 
 export class SearchResult {
   search: Search;
-  media: Media[];
+  master: Master[];
 }

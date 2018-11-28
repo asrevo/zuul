@@ -1,12 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {TubeService} from '../../services/tube.service';
-import {Media} from '../../domain/media';
 import {FeedbackService} from '../../services/feedback.service';
 import {AuthService} from '../../services/auth.service';
 import {AuthUser} from '../../domain/auth-user';
 import {ReplaySubject, zip} from 'rxjs';
 import {map, mergeMap} from 'rxjs/internal/operators';
+import {Master} from "../../domain/master";
 
 
 @Component({
@@ -16,7 +16,7 @@ import {map, mergeMap} from 'rxjs/internal/operators';
 })
 export class VideoComponent implements OnInit {
   public id = '-1';
-  public m: Media;
+  public m: Master;
   public isLiked = false;
   public commentText = '';
   public authUser: AuthUser;

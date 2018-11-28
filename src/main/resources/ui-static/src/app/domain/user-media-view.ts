@@ -1,4 +1,4 @@
-import {Media} from "./media";
+import {Master} from "./master";
 
 export class UserMediaView {
   id: string;
@@ -7,5 +7,5 @@ export class UserMediaView {
   createdDate: Date;
   lastViewDate: Date;
   count: number;
-  m: Media;
+  m: Master;
 }

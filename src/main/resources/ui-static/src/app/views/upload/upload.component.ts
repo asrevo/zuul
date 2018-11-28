@@ -1,10 +1,10 @@
 import {Component, NgZone, OnDestroy, OnInit} from '@angular/core';
-import {Media} from '../../domain/media';
 import {FeedbackService} from "../../services/feedback.service";
 import {interval, Subscription} from "rxjs";
 import {flatMap} from "rxjs/operators";
 import {Stater} from "../../domain/Stater";
 import {TubeService} from "../../services/tube.service";
+import {File} from "../../domain/file";
 
 
 @Component({
@@ -13,7 +13,7 @@ import {TubeService} from "../../services/tube.service";
   styleUrls: ['./upload.component.css']
 })
 export class UploadComponent implements OnInit, OnDestroy {
-  public media: Media = new Media();
+  public file: File = new File();
   private subscription: Subscription = null;
   public stater: Stater[] = [];
 
@@ -35,11 +35,11 @@ export class UploadComponent implements OnInit, OnDestroy {
   }
 
   upload() {
-    this._tubeService.save(this.media).subscribe(it => this.reset());
+    this._tubeService.save(this.file).subscribe(it => this.reset());
   }
 
   reset() {
-    this.media = new Media();
+    this.file = new File();
   }
 
 

@@ -6,8 +6,8 @@ import {Search} from '../domain/search';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {User} from '../domain/user';
-import {Media} from '../domain/media';
 import {filter, map, mergeMap} from 'rxjs/internal/operators';
+import {Master} from "../domain/master";
 
 @Injectable()
 export class IndexingService {
@@ -20,10 +20,10 @@ export class IndexingService {
 
   search(search: Search): Observable<SearchResult> {
     return this._http.post<SearchResult>(this.url + 'search', search)
-      .pipe(filter((it: SearchResult) => it.media.length > 0), mergeMap((it: SearchResult) => {
-        return this._userService.findAll(it.media.map((itm: Media) => itm.userId))
+      .pipe(filter((it: SearchResult) => it.master.length > 0), mergeMap((it: SearchResult) => {
+        return this._userService.findAll(it.master.map((itm: Master) => itm.userId))
           .pipe(map((itus: User[]) => {
-            it.media.map((itm: Media) => {
+            it.master.map((itm: Master) => {
               itm.user = itus.find((i: User) => i.id === itm.userId);
               return itm;
             });

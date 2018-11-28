@@ -1,5 +1,5 @@
-import {Component, OnInit, Input} from '@angular/core';
-import {Media} from '../../domain/media';
+import {Component, Input, OnInit} from '@angular/core';
+import {Master} from "../../domain/master";
 
 @Component({
   selector: 'as-video-grid',
@@ -8,7 +8,7 @@ import {Media} from '../../domain/media';
 })
 export class VideoGridComponent implements OnInit {
   @Input()
-  media: Media;
+  master: Master;
 
   constructor() {
   }

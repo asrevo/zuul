@@ -2,9 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../../services/auth.service';
 import {UserService} from '../../services/user.service';
 import {TubeService} from '../../services/tube.service';
-import {Media} from '../../domain/media';
 import {ActivatedRoute, Router} from '@angular/router';
 import {DefaultService} from '../../services/default.service';
+import {Master} from "../../domain/master";
 
 @Component({
   selector: 'as-base',
@@ -12,7 +12,7 @@ import {DefaultService} from '../../services/default.service';
   styleUrls: ['./base.component.css']
 })
 export class BaseComponent implements OnInit {
-  public media: Media[] = [];
+  public master: Master[] = [];
 
   constructor(public _activatedRoute: ActivatedRoute,
               public _router: Router,
@@ -26,7 +26,7 @@ export class BaseComponent implements OnInit {
 
   ngOnInit() {
     this._userService.currentUser().subscribe(it => this._authService.setAuth(it, 'true'), it => this._authService.setAuth(null, 'false'));
-    this._tubeService.findAllPagining(5, '0').subscribe((it: Media[]) => this.media = it);
+    this._tubeService.findAllPagining(5, '0').subscribe((it: Master[]) => this.master = it);
   }
 
 }

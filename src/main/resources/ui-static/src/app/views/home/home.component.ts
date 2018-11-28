@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {TubeService} from '../../services/tube.service';
-import {Media} from '../../domain/media';
+import {Master} from "../../domain/master";
 
 @Component({
   selector: 'as-home',
@@ -8,7 +8,7 @@ import {Media} from '../../domain/media';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  public media: Media[] = [];
+  public master: Master[] = [];
   private lastid = '0';
   public canLoad = true;
 
@@ -22,13 +22,13 @@ export class HomeComponent implements OnInit {
   load() {
     if (this.canLoad) {
       this.canLoad = false;
-      this._tubeService.findAllPagining(10, this.lastid).subscribe((it: Media[]) => {
+      this._tubeService.findAllPagining(10, this.lastid).subscribe((it: Master[]) => {
         it.forEach(i => {
-          this.media.push(i);
+          this.master.push(i);
         });
       }, error => {
       }, () => {
-        if (this.media.length > 0) this.lastid = this.media[this.media.length - 1].id;
+        if (this.master.length > 0) this.lastid = this.master[this.master.length - 1].id;
         this.canLoad = true;
       });
     }
