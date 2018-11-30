@@ -2,7 +2,7 @@
   <div class="item">
     <div class="pos-rlt">
       <div class="bottom">
-        <span class="badge bg-info m-l-sm m-b-sm">{{(master.time)| amFromUtc |amDateFormat: 'mm:ss'}}</span>
+        <span class="badge bg-info m-l-sm m-b-sm">{{(master.time*1000)| amFromUtc |amDateFormat: 'mm:ss'}}</span>
       </div>
       <div class="item-overlay opacity r r-2x bg-black">
         <div class="center text-center m-t-n">
