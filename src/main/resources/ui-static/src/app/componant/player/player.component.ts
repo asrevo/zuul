@@ -19,6 +19,8 @@ export class PlayerComponent implements OnInit {
     var player = new Clappr.Player({
       source: "/tube/api/" + this.id + ".m3u8", parentId: "#player",
       plugins: [Clappr.FlasHLS, LevelSelector],
+      height: 340,
+      width: 528,
       levelSelectorConfig: {
         title: 'Quality',
         labelCallback: function (playbackLevel, customLabel) {
