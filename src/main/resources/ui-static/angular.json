@@ -26,7 +26,6 @@
               "src/styles.css",
             ],
             "scripts": [
-              "src/assets/js/jwp.js",
               "src/assets/js/clappr.js",
               "src/assets/js/level-selector.js"
             ]
