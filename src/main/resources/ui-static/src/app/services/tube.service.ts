@@ -119,7 +119,7 @@ export class TubeService {
   }
 
   findOne(it: number): Observable<Master> {
-    return this._http.get<Master>(this.url + it)
+    return this._http.get<Master>(this.url + 'one/' + it)
       .pipe(mergeMap((itm: Master) => this._userService.findOne(itm.userId).pipe(map(itu => {
         itm.user = itu;
         return itm;
@@ -152,7 +152,6 @@ export class TubeService {
   save(file: File): Observable<any> {
     return this._http.post(this.url + "file/save", file);
   }
-
 
 
 }
