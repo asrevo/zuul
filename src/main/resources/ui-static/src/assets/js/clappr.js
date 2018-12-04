@@ -11362,7 +11362,7 @@ exports.push([module.i, "@font-face {\n  font-family: \"Roboto\";\n  font-style:
 /* 162 */
 /***/ (function(module, exports) {
 
-module.exports = "<%=baseUrl%>/38861cba61c66739c1452c3a71e39852.ttf";
+module.exports = "<%=baseUrl%>/assets/js/38861cba61c66739c1452c3a71e39852.ttf";
 
 /***/ }),
 /* 163 */
