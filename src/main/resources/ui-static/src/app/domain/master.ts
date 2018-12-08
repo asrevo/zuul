@@ -4,7 +4,6 @@ import {MediaInformation} from "./media-information";
 
 export class Master extends Base {
   image: string;
-  stream: string;
   secret: string;
   file: string;
   impls: IndexImpl[];
