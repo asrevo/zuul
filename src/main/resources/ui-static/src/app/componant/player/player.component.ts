@@ -28,7 +28,7 @@ export class PlayerComponent implements OnInit {
         }
       }
       , poster: {
-        url: 'https://df30el3rzhrdb.cloudfront.net/' + this.id + '.png',
+        url: 'https://df30el3rzhrdb.cloudfront.net/' + this.id + '_1.png',
         showOnVideoEnd: false
       }
     });
