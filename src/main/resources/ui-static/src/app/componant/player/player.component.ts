@@ -46,7 +46,7 @@ export class PlayerComponent implements OnInit {
         var thumbnailsPlugin = player.getPlugin("scrub-thumbnails");
         for (var i = 0; i < (it.time / 2); i++) {
           thumbnailsPlugin.addThumbnail({
-            url: "https://df30el3rzhrdb.cloudfront.net/_" + (i + 1) + ".png",
+            url: "https://df30el3rzhrdb.cloudfront.net/_" + this.id + (i + 1) + ".png",
             time: 1 + (i * 2)
           }).then(function () {
             console.log("Thumbnail added.");
