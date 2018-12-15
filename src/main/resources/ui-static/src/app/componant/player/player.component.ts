@@ -32,13 +32,13 @@ export class PlayerComponent implements OnInit {
         }
       }
       , poster: {
-        url: 'https://df30el3rzhrdb.cloudfront.net/' + this.id + '_1.png',
+        url: 'https://df30el3rzhrdb.cloudfront.net/' + this.id + '.png',
         showOnVideoEnd: false
       },
       scrubThumbnails: {
         backdropHeight: 64,
         spotlightHeight: 84,
-        thumbs:[]
+        thumbs: []
       }
     });
 
@@ -47,7 +47,7 @@ export class PlayerComponent implements OnInit {
         var thumbnailsPlugin = player.getPlugin("scrub-thumbnails");
         for (var i = 0; i < (it.time / 2); i++) {
           thumbnailsPlugin.addThumbnail({
-            url: "https://df30el3rzhrdb.cloudfront.net/_" + this.id + (i + 1) + ".png",
+            url: it.image + "/" + this.id + (i + 1) + ".jpeg",
             time: 1 + (i * 2)
           }).then(function () {
             console.log("Thumbnail added.");
