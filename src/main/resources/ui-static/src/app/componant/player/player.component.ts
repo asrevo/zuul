@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {TubeService} from "../../services/tube.service";
-import Clappr from 'clappr';
 
+declare var Clappr: any;
 declare var LevelSelector: any;
 declare var ClapprThumbnailsPlugin: any;
 

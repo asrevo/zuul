@@ -22,7 +22,6 @@
     "@angular/router": "^6.1.0",
     "@types/core-js": "^2.5.0",
     "angular2-moment": "^1.9.0",
-    "clappr": "^0.3.1",
     "rxjs": "^6.0.0",
     "zone.js": "~0.8.26"
   },
