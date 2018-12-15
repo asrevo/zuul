@@ -30,7 +30,9 @@ export class PlayerComponent implements OnInit {
 
     var player = new Clappr.Player({
       source: "/tube/api/" + this.id + ".m3u8", parentId: "#player",
-      plugins: [Clappr.FlasHLS, LevelSelector, ClapprThumbnailsPlugin, Clappr.MediaControl, PlaybackRatePlugin],
+      plugins: {
+        'core': [Clappr.FlasHLS, LevelSelector, ClapprThumbnailsPlugin, Clappr.MediaControl, PlaybackRatePlugin]
+      },
       height: 340,
       width: 528,
       levelSelectorConfig: {
@@ -58,7 +60,6 @@ export class PlayerComponent implements OnInit {
       }
     });
 
-    /*
         this._tubeService.findOne(this.id)
           .subscribe(it => {
             var thumbnailsPlugin = player.getPlugin("scrub-thumbnails");
@@ -71,6 +72,5 @@ export class PlayerComponent implements OnInit {
               })
             }
           })
-    */
   }
 }
