@@ -1,10 +1,17 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {TubeService} from "../../services/tube.service";
+import Clappr from 'clappr';
+import PlaybackRatePlugin from 'clappr-playback-rate-plugin';
 
+declare var LevelSelector: any;
+declare var ClapprThumbnailsPlugin: any;
+
+/*
 declare var Clappr: any;
 declare var LevelSelector: any;
 declare var ClapprThumbnailsPlugin: any;
 declare var PlaybackRatePlugin: any;
+*/
 
 @Component({
   selector: 'as-player',
