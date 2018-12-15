@@ -42,6 +42,7 @@ export class PlayerComponent implements OnInit {
       }
     });
 
+/*
     this._tubeService.findOne(this.id)
       .subscribe(it => {
         var thumbnailsPlugin = player.getPlugin("scrub-thumbnails");
@@ -54,5 +55,6 @@ export class PlayerComponent implements OnInit {
           })
         }
       })
+*/
   }
 }
