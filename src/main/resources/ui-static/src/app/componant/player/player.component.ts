@@ -37,7 +37,8 @@ export class PlayerComponent implements OnInit {
       },
       scrubThumbnails: {
         backdropHeight: 64,
-        spotlightHeight: 84
+        spotlightHeight: 84,
+        thumbs:[]
       }
     });
 
