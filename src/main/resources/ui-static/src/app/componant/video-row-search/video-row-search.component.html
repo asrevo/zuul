@@ -1,6 +1,6 @@
 <li class="list-group-item clearfix">
   <a [routerLink]="['/video',master.id]" class="pull-left thumb-lg m-r">
-    <img [src]="master.image">
+    <img [src]="master.image+'.png'">
   </a>
   <a class="clear" [routerLink]="['/video',master.id]">
     <span class="block text-ellipsis">{{master.title}}</span>
