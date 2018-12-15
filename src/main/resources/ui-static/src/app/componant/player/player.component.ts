@@ -4,6 +4,7 @@ import {TubeService} from "../../services/tube.service";
 declare var Clappr: any;
 declare var LevelSelector: any;
 declare var ClapprThumbnailsPlugin: any;
+declare var PlaybackRatePlugin: any;
 
 @Component({
   selector: 'as-player',
@@ -22,7 +23,7 @@ export class PlayerComponent implements OnInit {
 
     var player = new Clappr.Player({
       source: "/tube/api/" + this.id + ".m3u8", parentId: "#player",
-      plugins: [Clappr.FlasHLS, LevelSelector, ClapprThumbnailsPlugin],
+      plugins: [Clappr.FlasHLS, LevelSelector, ClapprThumbnailsPlugin, Clappr.MediaControl, PlaybackRatePlugin],
       height: 340,
       width: 528,
       levelSelectorConfig: {
@@ -39,6 +40,14 @@ export class PlayerComponent implements OnInit {
         backdropHeight: 64,
         spotlightHeight: 84,
         thumbs: []
+      },
+      playbackRateConfig: {
+        defaultValue: '1.0',
+        options: [
+          {value: '0.5', label: '0.5x'},
+          {value: '1.0', label: '1x'},
+          {value: '2.0', label: '2x'},
+        ]
       }
     });
 

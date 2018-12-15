@@ -23,12 +23,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
+              "src/styles.css"
             ],
             "scripts": [
               "src/assets/js/clappr.js",
               "src/assets/js/level-selector.js",
-              "src/assets/js/clappr-thumbnails-plugin.js"
+              "src/assets/js/clappr-thumbnails-plugin.js",
+              "src/assets/js/clappr-playback-rate-plugin.js"
             ]
           },
           "configurations": {
