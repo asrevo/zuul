@@ -45,9 +45,9 @@ export class PlayerComponent implements OnInit {
     this._tubeService.findOne(this.id)
       .subscribe(it => {
         var thumbnailsPlugin = player.getPlugin("scrub-thumbnails");
-        for (var i = 0; i < (it.time / 2); i++) {
+        for (var i = 0; i < Math.floor(it.time / 2); i++) {
           thumbnailsPlugin.addThumbnail({
-            url: it.image + "/" + this.id + (i + 1) + ".jpeg",
+            url: it.image + "/" + this.id + "_" + (i + 1) + ".jpeg",
             time: 1 + (i * 2)
           }).then(function () {
             console.log("Thumbnail added.");
