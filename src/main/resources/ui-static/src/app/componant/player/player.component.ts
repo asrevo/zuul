@@ -1,17 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {TubeService} from "../../services/tube.service";
 import Clappr from 'clappr';
-import PlaybackRatePlugin from 'clappr-playback-rate-plugin';
 
 declare var LevelSelector: any;
 declare var ClapprThumbnailsPlugin: any;
-
-/*
-declare var Clappr: any;
-declare var LevelSelector: any;
-declare var ClapprThumbnailsPlugin: any;
-declare var PlaybackRatePlugin: any;
-*/
 
 @Component({
   selector: 'as-player',
@@ -30,9 +22,7 @@ export class PlayerComponent implements OnInit {
 
     var player = new Clappr.Player({
       source: "/tube/api/" + this.id + ".m3u8", parentId: "#player",
-      plugins: {
-        'core': [Clappr.FlasHLS, LevelSelector, ClapprThumbnailsPlugin, Clappr.MediaControl, PlaybackRatePlugin]
-      },
+      plugins: [Clappr.FlasHLS, LevelSelector, ClapprThumbnailsPlugin],
       height: 340,
       width: 528,
       levelSelectorConfig: {
@@ -60,17 +50,17 @@ export class PlayerComponent implements OnInit {
       }
     });
 
-        this._tubeService.findOne(this.id)
-          .subscribe(it => {
-            var thumbnailsPlugin = player.getPlugin("scrub-thumbnails");
-            for (var i = 0; i < Math.floor(it.time / 2); i++) {
-              thumbnailsPlugin.addThumbnail({
-                url: it.image + "/" + this.id + "_" + (i + 1) + ".jpeg",
-                time: 1 + (i * 2)
-              }).then(function () {
-                console.log("Thumbnail added.");
-              })
-            }
+    this._tubeService.findOne(this.id)
+      .subscribe(it => {
+        var thumbnailsPlugin = player.getPlugin("scrub-thumbnails");
+        for (var i = 0; i < Math.floor(it.time / 2); i++) {
+          thumbnailsPlugin.addThumbnail({
+            url: it.image + "/" + this.id + "_" + (i + 1) + ".jpeg",
+            time: 1 + (i * 2)
+          }).then(function () {
+            console.log("Thumbnail added.");
           })
+        }
+      })
   }
 }
