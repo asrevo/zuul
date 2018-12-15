@@ -118,7 +118,7 @@ export class TubeService {
       }));
   }
 
-  findOne(it: number): Observable<Master> {
+  findOne(it: string): Observable<Master> {
     return this._http.get<Master>(this.url + 'one/' + it)
       .pipe(mergeMap((itm: Master) => this._userService.findOne(itm.userId).pipe(map(itu => {
         itm.user = itu;
