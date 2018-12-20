@@ -4,15 +4,16 @@
       <div class="bottom">
         <span class="badge bg-info m-l-sm m-b-sm">{{(master.time*1000)| amFromUtc |amDateFormat: 'mm:ss'}}</span>
       </div>
-      <div class="item-overlay opacity r r-2x bg-black">
+      <div class="item-overlay r r-2x">
         <div class="center text-center m-t-n">
           <a [routerLink]="['/video',master.id]">
             <i class="icon-control-play i-2x"></i>
+            <img [src]="master.image+'.webp'" style="height: 200px" class="r r-2x img-full">
           </a>
         </div>
       </div>
       <a>
-        <img [src]="master.image+'.webp'" style="height: 200px" class="r r-2x img-full">
+        <img [src]="master.image+'.png'" style="height: 200px" class="r r-2x img-full">
       </a>
     </div>
     <div class="padder-v">
