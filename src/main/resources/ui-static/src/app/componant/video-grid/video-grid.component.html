@@ -5,10 +5,10 @@
         <span class="badge bg-info m-l-sm m-b-sm">{{(master.time*1000)| amFromUtc |amDateFormat: 'mm:ss'}}</span>
       </div>
       <div class="item-overlay r r-2x">
+        <img [src]="master.image+'.webp'" style="height: 200px" class="r r-2x img-full">
         <div class="center text-center m-t-n">
           <a [routerLink]="['/video',master.id]">
             <i class="icon-control-play i-2x"></i>
-            <img [src]="master.image+'.webp'" style="height: 200px" class="r r-2x img-full">
           </a>
         </div>
       </div>
