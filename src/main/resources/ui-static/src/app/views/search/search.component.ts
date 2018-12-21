@@ -2,9 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {Location} from '@angular/common';
 import {Search} from '../../domain/search';
 import {ActivatedRoute, Params} from '@angular/router';
-import {IndexingService} from '../../services/indexing.service';
 import {map} from 'rxjs/internal/operators';
 import {Master} from "../../domain/master";
+import {FeedbackService} from "../../services/feedback.service";
 
 @Component({
   selector: 'as-search',
@@ -15,7 +15,7 @@ export class SearchComponent implements OnInit {
   public master: Master[] = [];
   public search: Search = new Search();
 
-  constructor(private _activatedRoute: ActivatedRoute, private _indexingService: IndexingService, private _location: Location) {
+  constructor(private _activatedRoute: ActivatedRoute, private _feedbackService: FeedbackService, private _location: Location) {
   }
 
   more() {
@@ -38,7 +38,7 @@ export class SearchComponent implements OnInit {
   }
 
   doSearch() {
-    this._indexingService.search(this.search).subscribe(it => {
+    this._feedbackService.search(this.search).subscribe(it => {
       it.master.forEach(itm => {
         this.master.push(itm);
       });
