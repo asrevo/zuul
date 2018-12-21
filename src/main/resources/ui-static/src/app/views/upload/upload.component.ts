@@ -1,8 +1,5 @@
 import {Component, NgZone, OnDestroy, OnInit} from '@angular/core';
-import {FeedbackService} from "../../services/feedback.service";
-import {interval, Subscription} from "rxjs";
-import {flatMap} from "rxjs/operators";
-import {Stater} from "../../domain/Stater";
+import {Subscription} from "rxjs";
 import {TubeService} from "../../services/tube.service";
 import {File} from "../../domain/file";
 
@@ -15,16 +12,16 @@ import {File} from "../../domain/file";
 export class UploadComponent implements OnInit, OnDestroy {
   public file: File = new File();
   private subscription: Subscription = null;
-  public stater: Stater[] = [];
 
-  constructor(private zone: NgZone, private _tubeService: TubeService, private _feedbackService: FeedbackService) {
+  constructor(private zone: NgZone, private _tubeService: TubeService) {
 
   }
 
   ngOnInit() {
-    this.subscription = interval(3000).pipe(flatMap(it => this._feedbackService.states())).subscribe(it => this.zone.run(() => {
-      this.stater = it
-    }));
+    /*
+        this.subscription = interval(3000).pipe(flatMap(it => this._feedbackService.states())).subscribe(it => this.zone.run(() => {
+        }));
+    */
 
   }
 

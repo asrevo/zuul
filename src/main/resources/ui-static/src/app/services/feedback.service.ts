@@ -12,7 +12,6 @@ import {Ids} from '../domain/ids';
 import {MediaInformation} from '../domain/media-information';
 import {Observable} from 'rxjs';
 import {map, mergeMap} from 'rxjs/internal/operators';
-import {Stater} from "../domain/Stater";
 
 @Injectable()
 export class FeedbackService {
@@ -121,9 +120,5 @@ export class FeedbackService {
 
   uncomment(id: string): Observable<Object> {
     return this._http.post(this.url + 'media/uncomment/' + id, null);
-  }
-
-  states(): Observable<Stater[]> {
-    return this._http.get<Stater[]>(this.url + 'states');
   }
 }
