@@ -31,7 +31,6 @@ import {DefaultService} from './services/default.service';
 import {UserService} from './services/user.service';
 import {AuthService} from './services/auth.service';
 import {FeedbackService} from './services/feedback.service';
-import {IndexingService} from './services/indexing.service';
 import {RouterModule} from '@angular/router';
 import {MomentModule} from 'angular2-moment';
 import {FormsModule} from '@angular/forms';
@@ -76,7 +75,7 @@ import {GroupComponent} from './views/group/group.component';
     FormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [DefaultService, TubeService, UserService, AuthService, UserService, FeedbackService, IndexingService,
+  providers: [DefaultService, TubeService, UserService, AuthService, UserService, FeedbackService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: ErrorHandlersService,
