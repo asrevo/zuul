@@ -23,17 +23,13 @@ export class PlayerComponent implements OnInit, OnDestroy {
       source: "/tube/api/" + this.id + ".m3u8", parentId: "#player",
       plugins: [Clappr.FlasHLS, LevelSelector, ClapprThumbnailsPlugin],
       height: 340,
-      autoPlay:true,
+      autoPlay: true,
       width: 528,
       levelSelectorConfig: {
         title: 'Quality',
         labelCallback: function (playbackLevel, customLabel) {
           return playbackLevel.level.height + 'p'; // High 720p
         }
-      }
-      , poster: {
-        url: 'https://df30el3rzhrdb.cloudfront.net/' + this.id + '.png',
-        showOnVideoEnd: false
       },
       scrubThumbnails: {
         backdropHeight: 64,
