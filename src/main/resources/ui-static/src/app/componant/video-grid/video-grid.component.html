@@ -17,7 +17,9 @@
       </a>
     </div>
     <div class="padder-v">
-      <a class="text-ellipsis" [routerLink]="['/video',master.id]"> {{master.title}}</a>
+      <a class="text-ellipsis" [routerLink]="['/video',master.id]">
+        <span class="text">{{master.title}}</span>
+      </a>
       <a *ngIf="master.user" [routerLink]="['/profile',master.userId]" class="text-ellipsis text-xs text-muted">
         {{master.user.name}}
       </a>

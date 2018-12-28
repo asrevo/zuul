@@ -24,13 +24,16 @@
                         <img [src]="m.image">
                       </a>
 
-                      <a *ngIf="authUser.user!=null&&m.userId===authUser.user.id" (click)="delete(m)" class="btn btn-xs btn-default pull-right ng-click-active"
+                      <a *ngIf="authUser.user!=null&&m.userId===authUser.user.id" (click)="delete(m)"
+                         class="btn btn-xs btn-default pull-right ng-click-active"
                          aria-hidden="false" style="">
                         <i class="fa fa-times"></i>
                       </a>
 
                       <a class="clear" [routerLink]="['/video',m.id]">
-                        <span class="block text-ellipsis">{{m.title}}</span>
+                        <span class="block text-ellipsis">
+                                <span class="text">{{m.title}}</span>
+                        </span>
                       </a>
                       <a *ngIf="m.user" class="clear" [routerLink]="['/profile',m.user.id]">
                         <small class="text-muted">{{m.user.name}}</small>

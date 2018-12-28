@@ -3,14 +3,16 @@
     <img [src]="master.image+'.png'">
   </a>
   <a class="clear" [routerLink]="['/video',master.id]">
-    <span class="block text-ellipsis">{{master.title}}</span>
+    <span class="block text-ellipsis">
+            <span class="text">{{master.title}}</span>
+    </span>
   </a>
   <a class="clear" [routerLink]="['/profile',master.user.id]">
     <small class="text-muted">{{master.user.name}}</small>
   </a>
   <span>
     <small class="text-ellipsis text-xs text-muted">
-      {{master.meta}}
+      <span class="text">{{master.meta}}</span>
     </small>
   </span>
   <span>

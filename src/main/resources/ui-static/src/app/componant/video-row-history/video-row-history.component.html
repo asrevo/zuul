@@ -3,14 +3,15 @@
     <img [src]="userMediaView.m.image+'.png'">
   </a>
   <a class="clear" [routerLink]="['/video',userMediaView.m.id]">
-    <span class="block text-ellipsis">{{userMediaView.m.title}}</span>
+    <span class="block text-ellipsis">        <span class="text">{{userMediaView.m.title}}</span>
+</span>
   </a>
   <a class="clear" [routerLink]="['/profile',userMediaView.m.user.id]">
     <small class="text-muted">{{userMediaView.m.user.name}}</small>
   </a>
   <span>
     <small class="text-ellipsis text-xs text-muted">
-      {{userMediaView.m.meta}}
+       <span class="text">{{userMediaView.m.meta}}</span>
     </small>
   </span>
   <span>

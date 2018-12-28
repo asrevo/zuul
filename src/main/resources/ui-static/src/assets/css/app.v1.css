@@ -1435,6 +1435,7 @@ pre code {
   .col-lg-2 {
     width: 16.66666667%;
   }
+
   .col-lg-2v {
     width: 20%;
   }
@@ -10468,6 +10469,7 @@ body.container {
   .vbox > section.w-f {
     bottom: 50px;
   }
+
   .vbox > footer {
     top: auto;
     z-index: 1000;
@@ -14083,4 +14085,12 @@ a.bg-light:hover, a.bg-light:focus {
   100% {
     height: 65%;
   }
+}
+
+.text {
+  display: block;
+  width: 100px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }

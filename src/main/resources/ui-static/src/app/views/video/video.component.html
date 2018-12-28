@@ -18,9 +18,13 @@
                     <as-player [id]="id"></as-player>
                   </div>
                   <div *ngIf="m" class="caption wrapper-sm">
-                    <h3 class="post-title">{{m.title}}</h3>
+                    <h3 class="post-title">
+                      <span class="text">{{m.title}}</span>
+                    </h3>
                     <div class="post-sum">
-                      <span class="text-ellipsis padder-v">{{m.meta}}</span>
+                      <span class="text-ellipsis padder-v">
+                        <span class="text">{{m.meta}}</span>
+                      </span>
                     </div>
                     <div class="text-muted">
                       <i class="fa fa-user icon-muted">
